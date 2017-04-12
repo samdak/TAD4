@@ -74,8 +74,8 @@ public class Ship extends AsteroidsSprite {
 		revThruster.render();
 
 		if (loaded)
-			Game.sound.thrustersSound.stop();
-		Game.sound.thrustersPlaying = false;
+			Game.thrustersSound.stop();
+		Game.thrustersPlaying = false;
 		hyperCounter = 0;
 	}
 
@@ -163,7 +163,7 @@ public class Ship extends AsteroidsSprite {
 				initShip();
 				hyperCounter = Game.HYPER_COUNT;
 			} else
-				endGame();
+				Game.endGame();
 	}
 
 	public void stopShip() {
@@ -173,8 +173,8 @@ public class Ship extends AsteroidsSprite {
 		if (shipsLeft > 0)
 			shipsLeft--;
 		if (loaded)
-			Game.sound.thrustersSound.stop();
-		Game.sound.thrustersPlaying = false;
+			Game.thrustersSound.stop();
+		Game.thrustersPlaying = false;
 	}
 
 }

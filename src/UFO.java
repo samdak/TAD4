@@ -43,9 +43,9 @@ public class Ufo extends AsteroidsSprite {
 		if (ufo.y > 0)
 			ufo.deltaY = ufo.deltaY;
 		ufo.render();
-		Game.sound.saucerPlaying = true;
-		if (Game.sound.sound)
-			Game.sound.saucerSound.loop();
+		Game.saucerPlaying = true;
+		if (Game.sound)
+			Game.saucerSound.loop();
 		ufoCounter = (int) Math.abs(AsteroidsSprite.width / ufo.deltaX);
 	}
 
@@ -69,8 +69,8 @@ public class Ufo extends AsteroidsSprite {
 				ufo.render();
 				for (i = 0; i < Game.MAX_SHOTS; i++)
 					if (Game.photon.photons[i].active && ufo.isColliding(Game.photon.photons[i])) {
-						if (Game.sound.sound)
-							Game.sound.crashSound.play();
+						if (Game.sound)
+							Game.crashSound.play();
 						Game.explosion.explode(ufo);
 						stopUfo();
 						Game.score += Game.UFO_POINTS;
@@ -94,8 +94,8 @@ public class Ufo extends AsteroidsSprite {
 		ufoCounter = 0;
 		ufoPassesLeft = 0;
 		if (Game.loaded)
-			Game.sound.saucerSound.stop();
-		Game.sound.saucerPlaying = false;
+			Game.saucerSound.stop();
+		Game.saucerPlaying = false;
 	}
 
 }

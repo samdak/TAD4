@@ -151,8 +151,8 @@ public class Asteroids {
             asteroidsLeft--;
             asteroids[i].active = false;
             Game.photon.photons[j].active = false;
-            if (Game.sound.sound)
-            	Game.sound.explosionSound.play();
+            if (Game.sound)
+            	Game.explosionSound.play();
             Game.explosion.explode(asteroids[i]);
             if (!asteroidIsSmall[i]) {
             	Game.score += Game.BIG_POINTS;
@@ -166,8 +166,8 @@ public class Asteroids {
 
         if (Game.ship.active && Game.ship.hyperCounter <= 0 &&
             asteroids[i].active && asteroids[i].isColliding(Game.ship)) {
-          if (Game.sound.sound)
-        	  Game.sound.crashSound.play();
+          if (Game.sound)
+        	  Game.crashSound.play();
           Game.explosion.explode(Game.ship);
           Game.ship.stopShip();
           Game.ufo.stopUfo();

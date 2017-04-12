@@ -18,9 +18,9 @@ public class Missle extends AsteroidsSprite {
 		missle.deltaY = 0.0;
 		missle.render();
 		missleCounter = Game.MISSLE_COUNT;
-		if (Game.sound.sound)
-			Game.sound.missleSound.loop();
-		Game.sound.misslePlaying = true;
+		if (Game.sound)
+			Game.missleSound.loop();
+		Game.misslePlaying = true;
 	}
 
 	public void updateMissle() {
@@ -40,15 +40,15 @@ public class Missle extends AsteroidsSprite {
 				missle.render();
 				for (i = 0; i < Game.MAX_SHOTS; i++)
 					if (Game.photon.photons[i].active && missle.isColliding(Game.photon.photons[i])) {
-						if (Game.sound.sound)
-							Game.sound.crashSound.play();
+						if (Game.sound)
+							Game.crashSound.play();
 						Game.explosion.explode(missle);
 						stopMissle();
 						Game.score += Game.MISSLE_POINTS;
 					}
 				if (missle.active && Game.ship.active && Game.ship.hyperCounter <= 0 && Game.ship.isColliding(missle)) {
-					if (Game.sound.sound)
-						Game.sound.crashSound.play();
+					if (Game.sound)
+						Game.crashSound.play();
 					Game.explosion.explode(Game.ship);
 					Game.ship.stopShip();
 					Game.ufo.stopUfo();
@@ -99,8 +99,8 @@ public class Missle extends AsteroidsSprite {
 		missle.active = false;
 		missleCounter = 0;
 		if (Game.loaded)
-			Game.sound.missleSound.stop();
-		Game.sound.misslePlaying = false;
+			Game.missleSound.stop();
+		Game.misslePlaying = false;
 	}
 
 }
