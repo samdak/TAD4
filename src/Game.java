@@ -173,10 +173,17 @@ public class Game extends Applet implements Runnable, KeyListener {
 	static Photon photon = new Photon();
 	static Asteroids asteroids = new Asteroids();
 	static Sound sound = new Sound();
-	static Ufo ufo;
-	static Missle missle;
-	static Ship ship;
-	static Ship fwdThruster, revThruster;
+	static Ufo ufo = new Ufo();
+	static Missle missle = new Missle();
+	static Ship ship = new Ship();
+	static Ship fwdThruster = new Ship();
+	static Ship revThruster = new Ship();
+	
+	
+	
+	
+	
+	
 
 	public String getAppletInfo() {
 
