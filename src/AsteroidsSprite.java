@@ -1,4 +1,3 @@
-
 /******************************************************************************
   The AsteroidsSprite class defines a game object, including it's shape,
   position, movement and rotation. It also can detemine if two objects collide.
@@ -7,7 +6,7 @@
 import java.awt.Polygon;
 
 public class AsteroidsSprite {
-
+    
   // Fields:
 
   static int width;          // Dimensions of the graphics area.
